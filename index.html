@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Street Fighter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <video class="fullscreen-video" autoplay="autoplay" muted loop>
+    <source src="https://cdn.pixabay.com/vimeo/353022566/battle-32475.mp4?width=640&hash=b68ebcca1e2a37b8f7228c40af3cc9bd61fc73aa">
+    Your browser does not support the video tag.
+  </video>
+
+  <div id="loading">
+    <div id="loading-frame">
+      <div class="loader"></div>
+    </div>
+  </div>
+
+  <img src="image/logocharacterselect.PNG" class="logo" />
+
+  <div class="container">
+
+    <!-- Detailed View Of A Fighter -->
+    <div id="fighter">
+      <!-- Character details will be injected here -->
+    </div>
+
+    <!-- List of Fighters -->
+    <div id="fighters-container">
+      <ul id="fighters"></ul>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+
+</body>
+
+</html>
