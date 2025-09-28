@@ -1,0 +1,686 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+/* Background animation */
+body {
+  margin: 0;
+  font-family: 'Russo One', sans-serif;
+  background: linear-gradient(to bottom, #015492, #010134);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("https://www.toptal.com/designers/subtlepatterns/uploads/what-the-hex.png") repeat 0 0;
+  opacity: 0.2;
+  z-index: -2;
+  animation: animate-bg 0.92s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes animate-bg {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.fullscreen-video {
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  translate: -50% -50%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Rest of your existing CSS remains the same */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fullscreen-video {
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  translate: -50% -50%;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.logo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: auto;
+  max-width: 100px;
+  z-index: 2;
+}
+
+#loading {
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  color: yellow;
+  font-size: 2rem;
+}
+
+#loading-frame {
+  border-top: 2px solid yellow;
+  border-bottom: 2px solid yellow;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animated loading text */
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  clip-path: inset(0 3ch 0 0);
+  animation: l4 1s steps(4) infinite;
+  color: yellow;
+}
+
+.loader:before {
+  content: "Loading...";
+}
+
+@keyframes l4 {
+  to { clip-path: inset(0 -1ch 0 0); }
+}
+
+/* Fighters List - Styled like Apex Legends */
+#fighters {
+  opacity: 0;
+  transform: translateY(-200px);
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: scroll;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+#fighters li {
+  display: flex;
+  width: 75px;
+  height: 80px;
+  filter: grayscale(1);
+  outline: 2px solid gray;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+#fighters li.active {
+  filter: grayscale(0);
+  outline: 2px solid yellow;
+  outline-offset: 2px;
+  margin: 4px;
+  z-index: 99;
+  animation: flash 300ms linear;
+  position: relative;
+}
+
+#fighters li.active:after {
+  content: "1P";
+  position: absolute;
+  text-align: center;
+  top: -5px;
+  font-size: 25px;
+  color: #e3231e;
+  font-weight: 700;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
+}
+
+/* Add these media queries to adjust the 1P indicator on smaller screens */
+@media (max-width: 768px) {
+  #fighters li.active::after {
+    font-size: 20px;
+    top: -5px;
+  }
+}
+
+@media (max-width: 480px) {
+  #fighters li.active::after {
+    font-size: 20px;
+    top: -5px;
+  }
+}
+
+#fighters li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fighter-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(227, 35, 30, 0.7);
+  color: white;
+  font-size: 0.55em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.05em 0;
+  text-align: center;
+  display: none;
+}
+
+#fighters li.active .fighter-name {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Single Fighter */
+#fighter {
+  opacity: 0;
+  transform: translateY(-200px);
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  margin-top: 120px;
+  padding: 0 15px;
+  overflow-y: auto;
+  max-height: calc(100vh - 220px);
+}
+
+.fighter-details {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.fighter-profile {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.fighter-profile img {
+  max-height: 550px;
+}
+
+.fighter-stats {
+  flex: 1;
+  color: #fff;
+  font-family: 'Russo One', sans-serif;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fighter-stats .name {
+  font-size: 40px;
+  color: #FFF;
+  text-shadow: 0 0 3px yellow;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.fighter-stats .stat {
+  padding: 3px 0;
+}
+
+.fighter-stats .tag {
+  display: inline-block;
+  background-color: yellow;
+  color: #000;
+  padding: 0 5px;
+  margin-right: 5px;
+}
+
+.fighter-stats .final {
+  padding-top: 30px;
+  padding-bottom: 19px;
+}
+
+.alignment {
+  font-size: 22.5px;
+  text-shadow: 0 0 1px white;
+  position: relative;
+  top: 2.5px;
+}
+
+.alignment.good {
+  color: #01ff2c;
+}
+
+.alignment.neutral {
+  color: #f5bc08;
+}
+
+.alignment.evil {
+  color: #f52808;
+}
+
+/* World Map Styles */
+.world-map-container {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  text-align: center; /* Center the map container contents */
+  margin-left: auto; /* Auto margins for horizontal centering */
+  margin-right: auto; /* Auto margins for horizontal centering */
+}
+
+.world-map {
+  display: block;
+  width: 70%;
+  max-width: 350px; /* Set a max-width for the image */
+  margin: 0 auto; /* Center the image inside the container */
+  height: auto;
+  object-fit: contain; /* Ensure the image maintains aspect ratio */
+  object-position: center; /* Center the image content */
+
+}
+
+.location-marker {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #f52808;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: pulse 1.5s infinite;
+  z-index: 2;
+}
+
+/* Custom scrollbar for other elements */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(40, 40, 40);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ef4718;
+}
+
+/* Info button with custom icon */
+.info-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 0, 0.8);
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: transform 0.2s, background-color 0.2s;
+  vertical-align: middle;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.info-btn:hover {
+  background-color: yellow;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Custom info icon */
+.info-btn::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+@media (max-width: 768px) {
+  .info-btn {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .info-btn::before {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.modal-content {
+  position: relative;
+  background: linear-gradient(135deg, #333333, #111111);
+  border: 2px solid yellow;
+  max-width: 600px;
+  width: 80%;
+  padding: 30px;
+  color: white;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(-50px);
+  transition: transform 0.3s;
+  max-height: 80vh;
+  overflow-y: auto;
+  margin: 20px;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 24px;
+  color: yellow;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 0, 0.3);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-header img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid yellow;
+  margin-right: 15px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: yellow;
+  text-transform: uppercase;
+}
+
+.modal-body {
+  line-height: 1.6;
+}
+
+.bio-section {
+  margin-bottom: 15px;
+}
+
+.bio-section h3 {
+  color: yellow;
+  margin-bottom: 5px;
+  border-left: 3px solid red;
+  padding-left: 10px;
+}
+
+.special-move {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 2px solid red;
+}
+
+.special-move-name {
+  color: #f52808;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245, 40, 8, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(245, 40, 8, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 40, 8, 0);
+  }
+}
+
+@keyframes flash {
+  0% { filter: grayscale(0) brightness(100%); }
+  20% { filter: grayscale(0) brightness(150%); }
+  40% { filter: grayscale(0) brightness(100%); }
+  60% { filter: grayscale(0) brightness(150%); }
+  80% { filter: grayscale(0) brightness(100%); }
+  100% { filter: grayscale(0) brightness(150%); }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  #fighter {
+    margin-top: 80px;
+    max-height: calc(100vh - 180px);
+  }
+  
+  .logo {
+    max-width: 80px;
+  }
+  
+  .fighter-details {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fighter-profile {
+    max-height: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .fighter-profile img {
+    max-height: 300px;
+  }
+  
+  .fighter-stats {
+    padding-top: 0;
+    width: 100%;
+  }
+  
+  .fighter-stats .name {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .fighter-stats .stat {
+    font-size: 0.9rem;
+  }
+
+  .fighter-stats .final {
+    padding-top: 15px;
+  }
+  
+  .alignment {
+    font-size: 18px;
+  }
+  
+  #fighters li {
+    width: 60px;
+    height: 65px;
+  }
+  
+  .world-map-container {
+    max-width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .location-marker {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .modal-header img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .modal-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  #fighter {
+    margin-top: 70px;
+    max-height: calc(100vh - 170px);
+  }
+  
+  .fighter-profile img {
+    max-height: 250px;
+  }
+  
+  .fighter-stats .name {
+    font-size: 28px;
+  }
+  
+  .fighter-stats .stat {
+    font-size: 0.85rem;
+  }
+  
+  #fighters li {
+    width: 50px;
+    height: 55px;
+  }
+  
+  .fighter-name {
+    font-size: 0.45em;
+  }
+  
+  .location-marker {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Landscape mode */
+@media (max-height: 500px) and (orientation: landscape) {
+  #fighter {
+    margin-top: 60px;
+    max-height: calc(100vh - 160px);
+  }
+  
+  .fighter-details {
+    flex-direction: row;
+  }
+  
+  .fighter-profile {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+  
+  .fighter-profile img {
+    max-height: 200px;
+  }
+  
+  .fighter-stats {
+    padding-top: 0;
+  }
+  
+  .fighter-stats .name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .fighter-stats .stat {
+    padding: 2px 0;
+    font-size: 0.8rem;
+  }
+  
+  .fighter-stats .final {
+    padding-top: 10px;
+  }
+  
+  .world-map-container {
+    max-width: 250px;
+  }
+}
