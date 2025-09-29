@@ -10,14 +10,15 @@ body {
   position: relative;
 }
 
-.background-pattern {
+body::before {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("https://www.toptal.com/designers/subtlepatterns/uploads/what-the-hex.png") repeat 0 0;
-  opacity: 0.3;
+  background: url("image/what-the-hex.png") repeat 0 0;
+  opacity: 0.2;
   z-index: -2;
   animation: animate-bg 0.92s infinite linear;
   pointer-events: none;
