@@ -39,18 +39,18 @@ body::before {
   opacity: 0.8;
   -webkit-opacity: 0.8;
   -khtml-opacity: 0.8;
-  color: rgba(0, 0, 0, 0.8);
+  color: linear-gradient(to bottom, #015492, #010134);
 }
 
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
   opacity: 0.8;
-  color: rgba(0, 0, 0, 0.8);
+  color: linear-gradient(to bottom, #015492, #010134);
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10+ */
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  color: rgba(0, 0, 0, 0.8);
+  color: linear-gradient(to bottom, #015492, #010134);
 }
 
 .fullscreen-video {
