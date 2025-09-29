@@ -19,6 +19,10 @@ body::before {
   bottom: 0;
   background: url("https://www.toptal.com/designers/subtlepatterns/uploads/what-the-hex.png") repeat 0 0;
   opacity: 0.2;
+  -webkit-opacity: 0.3; /* For older WebKit browsers */
+  -moz-opacity: 0.3; /* For older Firefox */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; /* IE8 */
+  filter: alpha(opacity=30); /* IE5-7 */
   z-index: -2;
   animation: animate-bg 0.92s infinite linear;
   pointer-events: none;
@@ -28,6 +32,25 @@ body::before {
   100% {
     background-position: 50px 50px;
   }
+}
+
+/* Form element placeholder styles (for completeness) */
+::-webkit-input-placeholder { /* WebKit browsers */
+  opacity: 0.8;
+  -webkit-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  opacity: 0.8;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .fullscreen-video {
@@ -42,28 +65,6 @@ body::before {
   translate: -50% -50%;
   z-index: -1;
   opacity: 0.5;
-}
-
-/* Improve mobile transparency and performance */
-@media (max-width: 768px) {
-  body::before {
-    opacity: 0.2; /* Reduce pattern opacity on mobile for better readability */
-  }
-  
-  .fullscreen-video {
-    opacity: 0.4; /* Adjust video opacity on mobile */
-  }
-}
-
-/* Further adjustments for very small devices */
-@media (max-width: 480px) {
-  body::before {
-    opacity: 0.15; /* Further reduce pattern opacity on small mobile */
-  }
-  
-  .fullscreen-video {
-    opacity: 0.3; /* Reduce video opacity on small mobile */
-  }
 }
 
 /* Rest of your existing CSS remains the same */
