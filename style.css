@@ -10,19 +10,14 @@ body {
   position: relative;
 }
 
-body::before {
-  content: "";
+.background-pattern {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: url("https://www.toptal.com/designers/subtlepatterns/uploads/what-the-hex.png") repeat 0 0;
-  opacity: 0.2;
-  -webkit-opacity: 0.3; /* For older WebKit browsers */
-  -moz-opacity: 0.3; /* For older Firefox */
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)"; /* IE8 */
-  filter: alpha(opacity=30); /* IE5-7 */
+  opacity: 0.3;
   z-index: -2;
   animation: animate-bg 0.92s infinite linear;
   pointer-events: none;
@@ -32,25 +27,6 @@ body::before {
   100% {
     background-position: 50px 50px;
   }
-}
-
-/* Form element placeholder styles (for completeness) */
-::-webkit-input-placeholder { /* WebKit browsers */
-  opacity: 0.8;
-  -webkit-opacity: 0.8;
-  -khtml-opacity: 0.8;
-  color: linear-gradient(to bottom, rgba(1, 84, 146, 1), rgba(1, 1, 52, 1));
-}
-
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  opacity: 0.8;
-  color: linear-gradient(to bottom, rgba(1, 84, 146, 1), rgba(1, 1, 52, 1));
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  color: linear-gradient(to bottom, rgba(1, 84, 146, 1), rgba(1, 1, 52, 1));
 }
 
 .fullscreen-video {
