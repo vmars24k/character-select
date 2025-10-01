@@ -5,10 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Street Fighter</title>
+  <title>Character Select</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet" type="text/css" />
+  
+  <!-- FAVICON -->
+  <link rel="icon" href="image/favicon.png" sizes="32x32" type="image/png">
 </head>
 
 <body>
@@ -17,6 +20,9 @@
     <source src="https://cdn.pixabay.com/vimeo/353022566/battle-32475.mp4?width=640&hash=b68ebcca1e2a37b8f7228c40af3cc9bd61fc73aa">
     Your browser does not support the video tag.
   </video>
+
+  <!-- Music control button -->
+  <div class="music-control" id="musicControl"></div>
 
   <div id="loading">
     <div id="loading-frame">
@@ -39,6 +45,12 @@
     </div>
 
   </div>
+
+  <!-- Add background music -->
+  <audio id="bgMusic" loop>
+    <source src="audio/black-eyed-peas-bebot.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
 
