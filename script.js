@@ -2,6 +2,7 @@ const loader = document.getElementById('loading');
 const loadingFrame = document.getElementById('loading-frame');
 const ul = document.getElementById('fighters');
 const list = document.createDocumentFragment();
+const bgMusic = document.getElementById('bgMusic');
 
 // Street Fighter character data
 const fighters = [
@@ -9,12 +10,12 @@ const fighters = [
     id: 'Bruno Mars',
     name: 'Bruno Mars',
     smallImg: 'image/player1.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/ryu_compressed.png',
+    largeImg: 'image/bm-player1.png',
     height: '5"9',
     birth: 'Cebu',
-    fighting: 'Ansatsuken',
-    skills: 'Sleeping anywhere',
-    alignment: 'Good',
+    fighting: 'N/A',
+    skills: 'Singing and Dancing',
+    alignment: 'Lawful Good',
     alignmentType: 'good',
     active: true,
     location: { x: 64.8, y: 59.4 } // Cebu
@@ -23,12 +24,12 @@ const fighters = [
     id: 'Justine Tate',
     name: 'Justine Tate',
     smallImg: 'image/player2.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/ken-compressed.png',
-    height: '5"9',
+    largeImg: 'image/jt-player2.png',
+    height: 'N/A',
     birth: 'Manila',
-    fighting: 'Ansatsuken',
-    skills: 'Cooking pasta',
-    alignment: 'Good',
+    fighting: 'N/A',
+    skills: 'Fishing and Welding',
+    alignment: 'Lawful Good',
     alignmentType: 'good',
     active: false,
     location: { x: 60.5, y: 42.3 } // Manila
@@ -37,12 +38,12 @@ const fighters = [
     id: 'King Kaikon',
     name: 'King Kaikon',
     smallImg: 'image/player3.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/chun_li-compressed.png',
-    height: '5"6',
+    largeImg: 'image/kk-player3.png',
+    height: 'N/A',
     birth: 'Davao',
-    fighting: 'Chinese martial arts',
-    skills: 'Shooting',
-    alignment: 'Lawful Good',
+    fighting: 'N/A',
+    skills: 'Fixing Cars and Betting',
+    alignment: 'Good',
     alignmentType: 'good',
     active: false,
     location: { x: 70.2, y: 75.6 } // Davao
@@ -51,11 +52,11 @@ const fighters = [
     id: 'Emman DeGuzman',
     name: 'Emman DeGuzman',
     smallImg: 'image/player4.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/dj-compressed.png',
-    height: '6"1',
+    largeImg: 'image/eg-player4.png',
+    height: 'N/A',
     birth: 'Cebu',
-    fighting: 'Kickboxing',
-    skills: 'Bamboo dancing',
+    fighting: 'Boxing',
+    skills: 'Comedian',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
@@ -65,11 +66,11 @@ const fighters = [
     id: 'Cedrick Garces',
     name: 'Cedrick Garces',
     smallImg: 'image/player5.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/cammie-compressor.png',
-    height: '5"5',
+    largeImg: 'image/cg-player5.png',
+    height: '5"10',
     birth: 'Davao',
-    fighting: 'Shadaloo/Special Forces Training',
-    skills: 'Knife throwing',
+    fighting: 'N/A',
+    skills: 'Basketball and Fixing Cars',
     alignment: 'Good/Lawful Neutral',
     alignmentType: 'good',
     active: false,
@@ -79,13 +80,13 @@ const fighters = [
     id: 'PlayBoy Daim',
     name: 'PlayBoy Daim',
     smallImg: 'image/player6.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/sagat-compressed.png',
-    height: '7"5',
+    largeImg: 'image/ds-player6.png',
+    height: 'N/A',
     birth: 'Cebu',
-    fighting: 'Muay Thai',
-    skills: 'Breathing underwater',
-    alignment: 'Neutral',
-    alignmentType: 'neutral',
+    fighting: 'N/A',
+    skills: 'Touching',
+    alignment: 'Evil/Lawful Neutral',
+    alignmentType: 'evil',
     active: false,
     location: { x: 64.8, y: 59.4 } // Cebu
   },
@@ -93,13 +94,13 @@ const fighters = [
     id: 'Beatrix',
     name: 'Beatrix',
     smallImg: 'image/player7.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/zangief-compressed.png',
-    height: '7"0',
+    largeImg: 'image/bs-player7.png',
+    height: 'N/A',
     birth: 'Manila',
-    fighting: 'Russian/American Pro Wrestling',
-    skills: 'Resistance to cold',
-    alignment: 'Evil',
-    alignmentType: 'evil',
+    fighting: 'N/A',
+    skills: 'Love',
+    alignment: 'Neutral',
+    alignmentType: 'neutral',
     active: false,
     location: { x: 60.5, y: 42.3 } // Manila
   },
@@ -107,13 +108,13 @@ const fighters = [
     id: 'Kryn Kent',
     name: 'Kryn Kent',
     smallImg: 'image/player8.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/akuma_compressed.jpg',
-    height: '5"10',
+    largeImg: 'image/kr-player8.png',
+    height: 'N/A',
     birth: 'Manila',
-    fighting: 'Satsui no Hado/Ansatsuken',
-    skills: 'Martial Arts',
-    alignment: 'Neutral Evil',
-    alignmentType: 'evil',
+    fighting: 'N/A',
+    skills: 'Video Editing and Dancing',
+    alignment: 'Good',
+    alignmentType: 'good',
     active: false,
     location: { x: 60.5, y: 42.3 } // Manila
   },
@@ -121,13 +122,13 @@ const fighters = [
     id: 'LyndonJT',
     name: 'LyndonJT',
     smallImg: 'image/player9.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/bison-compressor.png',
-    height: '6"0',
+    largeImg: 'image/ljt-player9.png',
+    height: '6"1',
     birth: 'Manila',
-    fighting: 'Psycho Power',
-    skills: 'Hypnosis',
-    alignment: 'Evil',
-    alignmentType: 'evil',
+    fighting: 'Boxing',
+    skills: 'Martial Arts and Lifting',
+    alignment: 'Lawful Good',
+    alignmentType: 'good',
     active: false,
     location: { x: 60.5, y: 42.3 } // Manila
   },
@@ -135,13 +136,13 @@ const fighters = [
     id: 'Vann Damme',
     name: 'Vann Damme',
     smallImg: 'image/player10.png',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/blanka_compressed.png',
-    height: '6"4',
+    largeImg: 'image/vd-player10.png',
+    height: '5"9',
     birth: 'Cebu',
-    fighting: 'Feral movement, electric attacks',
-    skills: 'Hunting',
-    alignment: 'Good',
-    alignmentType: 'good',
+    fighting: 'Shotokan Karate',
+    skills: 'Martial Arts',
+    alignment: 'Neutral',
+    alignmentType: 'neutral',
     active: false,
     location: { x: 64.8, y: 59.4 } // Cebu
   },
@@ -150,13 +151,13 @@ const fighters = [
     id: 'Super Dan',
     name: 'Super Dan',
     smallImg: 'image/player11.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/bison-compressor.png',
-    height: '6"0',
+    largeImg: 'image/ds-player11.png',
+    height: 'N/A',
     birth: 'Cebu',
-    fighting: 'Psycho Power',
-    skills: 'Hypnosis',
-    alignment: 'Evil',
-    alignmentType: 'evil',
+    fighting: 'N/A',
+    skills: 'Happy and Sad',
+    alignment: 'Good',
+    alignmentType: 'good',
     active: false,
     location: { x: 64.8, y: 59.4 } // Cebu
   },
@@ -164,11 +165,11 @@ const fighters = [
     id: 'Dherrian',
     name: 'Dherrian',
     smallImg: 'image/player12.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/blanka_compressed.png',
-    height: '6"4',
+    largeImg: 'image/dd-player12.png',
+    height: 'N/A',
     birth: 'Manila',
-    fighting: 'Feral movement, electric attacks',
-    skills: 'Hunting',
+    fighting: 'N/A',
+    skills: 'Fising and Hunting',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
@@ -178,11 +179,11 @@ const fighters = [
     id: 'Kizzia',
     name: 'Kizzia',
     smallImg: 'image/player13.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/blanka_compressed.png',
-    height: '6"4',
+    largeImg: 'image/kd-player13.png',
+    height: 'N/A',
     birth: 'Manila',
-    fighting: 'Feral movement, electric attacks',
-    skills: 'Hunting',
+    fighting: 'N/A',
+    skills: 'Drawing, Playing Instruments, Valorant',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
@@ -192,11 +193,11 @@ const fighters = [
     id: 'Sjjayee',
     name: 'Sjjayee',
     smallImg: 'image/player14.jpg',
-    largeImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/blanka_compressed.png',
-    height: '6"4',
+    largeImg: 'image/sb-player14.png',
+    height: '5"9',
     birth: 'Manila',
-    fighting: 'Feral movement, electric attacks',
-    skills: 'Hunting',
+    fighting: 'N/A',
+    skills: 'Gaming',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
@@ -209,159 +210,158 @@ fighters.forEach(fighter => {
   switch(fighter.id) {
     case 'Bruno Mars':
       fighter.description = {
-        background: "A wandering warrior who travels the world to perfect his skills. Ryu's devotion to martial arts and seeking worthy opponents is unmatched.",
-        personality: "Stoic, focused, and always seeking to improve. Ryu values honor and the journey of self-improvement above all else.",
+        background: "Born and raised in Cebu, Bruno Mars developed his extraordinary singing and dancing skills from a young age. While not a traditional fighter, his rhythm and stage presence make him a formidable opponent in any battle of entertainment.",
+        personality: "Charismatic, energetic, and always ready to put on a show. Bruno brings joy to everyone around him and approaches challenges with unwavering positivity.",
         specialMoves: [
-          { name: "Hadoken", description: "A surge of energy projected from the palms that can hit opponents at a distance." },
-          { name: "Shoryuken", description: "A rising dragon punch with invincible properties, perfect for countering aerial attacks." },
-          { name: "Tatsumaki Senpukyaku", description: "A spinning kick that propels Ryu forward, hitting multiple times." }
+          { name: "Uptown Funk", description: "A dazzling dance move that confuses opponents with its rhythm and style." },
+          { name: "24K Magic", description: "Creates a blinding golden aura that temporarily blinds opponents while boosting Bruno's charisma." },
+          { name: "Versace Finisher", description: "An unstoppable vocal performance that stuns opponents and rallies allies." }
         ]
       };
       break;
     case 'Justine Tate':
       fighter.description = {
-        background: "An American martial artist who trained alongside Ryu under Master Gouken. Ken is now a family man who balances his fighting career with his responsibilities.",
-        personality: "Confident, flashy, and charismatic. Ken enjoys the spotlight and showcasing his abilities with flair.",
+        background: "Hailing from Manila, Justine Tate mastered the unlikely combination of fishing and welding. He turned these practical skills into a unique combat style, using fishing lines to ensnare opponents and precisely welded weapons for defense.",
+        personality: "Patient and methodical, just like a seasoned fisher. Justine can wait for the perfect opportunity to strike, but acts with surgical precision when the moment comes.",
         specialMoves: [
-          { name: "Hadoken", description: "Ken's version is faster but slightly weaker than Ryu's." },
-          { name: "Shoryuken", description: "Ken's dragon punch has more aggressive properties, with potential for multiple hits and fire effects." },
-          { name: "Tatsumaki Senpukyaku", description: "A spinning kick with less range but more damage potential than Ryu's version." }
+          { name: "Master Angler", description: "Uses a specialized fishing line to pull opponents toward him or to swing across the battlefield." },
+          { name: "Molten Forge", description: "Quickly welds improvised weapons from nearby metal objects." },
+          { name: "Net Capture", description: "Deploys a reinforced net to temporarily immobilize opponents." }
         ]
       };
       break;
     case 'King Kaikon':
       fighter.description = {
-        background: "An Interpol officer seeking to avenge her father's death at the hands of M. Bison. Chun-Li is known as 'The Strongest Woman in the World'.",
-        personality: "Strong-willed, determined, and just. She fights for what she believes in and to protect the innocent.",
+        background: "The self-proclaimed king of Davao's underground circuit, Kaikon built his reputation through car racing and high-stakes gambling. His mechanical knowledge and risk-taking personality translate perfectly to his unorthodox fighting style.",
+        personality: "Bold, calculating, and always willing to take chances. Kaikon approaches fights like betting - analyzing odds and knowing exactly when to go all-in.",
         specialMoves: [
-          { name: "Hyakuretsu Kyaku", description: "Lightning-fast kicks that hit multiple times, commonly known as the 'Lightning Kick'." },
-          { name: "Kikoken", description: "A chi-based projectile similar to the Hadoken, but fired from one hand." },
-          { name: "Spinning Bird Kick", description: "An upside-down spinning kick that hits multiple times while Chun-Li rotates in the air." }
+          { name: "Nitro Boost", description: "Channels the spirit of racing to dramatically increase speed for short bursts." },
+          { name: "All-In Gambit", description: "A risky attack that either deals massive damage or leaves Kaikon vulnerable." },
+          { name: "Mechanical Mastery", description: "Uses automotive knowledge to disable mechanical devices or create impromptu weapons from machinery." }
         ]
       };
       break;
     case 'Emman DeGuzman':
       fighter.description = {
-        background: "A Jamaican kickboxer and musician who combines his love of music with his fighting style. Dee Jay entered the World Warrior tournament to promote his music globally.",
-        personality: "Upbeat, positive, and energetic. He approaches both fighting and life with rhythm and enthusiasm.",
+        background: "Cebu's beloved comedy boxer, Emman combined his natural humor with formal boxing training to create a fighting style that both entertains and devastates. His unpredictable movements and psychological warfare through comedy give him a unique edge.",
+        personality: "Lighthearted, quick-witted, and surprisingly strategic. Emman uses humor to mask his calculating mind and to throw opponents off their game.",
         specialMoves: [
-          { name: "Air Slasher", description: "A sound wave projectile created by the power of his music." },
-          { name: "Double Dread Kick", description: "A pair of kicks aimed high then low, perfect for mix-up opportunities." },
-          { name: "Machine Gun Upper", description: "A series of rapid upward punches that can juggle opponents in the air." }
+          { name: "Punchline", description: "A devastatingly fast combo that always ends with an unexpected twist." },
+          { name: "Stand-Up Defense", description: "Taunts and jokes that distract opponents while setting up counter-attacks." },
+          { name: "Slapstick Special", description: "A series of seemingly clumsy but precisely targeted strikes that confuse opponents' defenses." }
         ]
       };
       break;
     case 'Cedrick Garces':
       fighter.description = {
-        background: "A former assassin for Shadaloo who was brainwashed by M. Bison. After breaking free, she joined Delta Red, a special forces team in the UK.",
-        personality: "Determined, direct, and focused. Despite her troubled past, Cammy fights to protect others and redeem herself.",
+        background: "From the streets of Davao, Cedrick rose to prominence through his basketball prowess and mechanical skills. His height and reach give him advantages in combat, while his knowledge of automotive mechanics lets him understand the weaknesses in any opponent's stance.",
+        personality: "Disciplined, analytical, and fair-minded. Cedrick approaches fights like a basketball game - with strategy, teamwork when needed, and an eye for the perfect shot.",
         specialMoves: [
-          { name: "Spiral Arrow", description: "A drilling forward kick that covers distance quickly, known as 'Cannon Drill'." },
-          { name: "Cannon Spike", description: "A powerful upward kick that launches both Cammy and her opponent into the air." },
-          { name: "Quick Spin Knuckle", description: "A spinning backfist that can be used to evade projectiles and counter-attack." }
+          { name: "Three-Point Strike", description: "A long-range attack that's nearly impossible to block when properly executed." },
+          { name: "Pivot Counter", description: "Uses basketball footwork to quickly pivot around opponents and attack from unexpected angles." },
+          { name: "Mechanical Breakdown", description: "Analyzes and targets structural weaknesses in opponents or environments." }
         ]
       };
       break;
     case 'PlayBoy Daim':
       fighter.description = {
-        background: "The 'Emperor of Muay Thai' and former champion who bears a scar on his chest from his defeat by Ryu. Initially driven by revenge, Sagat has learned to temper his anger.",
-        personality: "Proud, disciplined, and honorable. Despite his intimidating appearance, Sagat values the true spirit of combat.",
+        background: "The notorious charmer from Cebu, Daim developed his unique 'touching' style that combines elements of pressure points, distraction techniques, and psychological manipulation. His reputation precedes him in both social and combat circles.",
+        personality: "Flirtatious, unpredictable, and morally flexible. Daim uses charm as both a weapon and a shield, keeping opponents guessing about his true intentions.",
         specialMoves: [
-          { name: "Tiger Shot", description: "A projectile thrown at both high and low angles to control space." },
-          { name: "Tiger Uppercut", description: "A powerful rising uppercut similar to the Shoryuken." },
-          { name: "Tiger Knee Crush", description: "A flying knee attack that closes distance and deals significant damage." }
+          { name: "Charm Offensive", description: "Temporarily lowers opponent's guard through distraction and misdirection." },
+          { name: "Pressure Point Caress", description: "A series of precise touches that can temporarily paralyze limbs or cause disorientation." },
+          { name: "Heartbreaker", description: "Ultimate technique that builds up emotional connection before delivering a devastating betrayal attack." }
+        ]
+      };
+      break;
+    case 'Beatrix':
+      fighter.description = {
+        background: "Manila's mysterious love expert, Beatrix has studied the emotional and physical aspects of love to develop a fighting style based on connection and harmony. She can read opponents' emotional states and exploit them in battle.",
+        personality: "Empathetic, balanced, and insightful. Beatrix maintains emotional neutrality in combat, allowing her to adapt to any situation without being clouded by passion.",
+        specialMoves: [
+          { name: "Emotional Resonance", description: "Senses and mirrors opponent's emotional state to predict their next moves." },
+          { name: "Harmony Strike", description: "A perfectly balanced attack that's difficult to defend against due to its natural flow." },
+          { name: "Heartbound", description: "Creates a temporary emotional connection that makes opponents hesitant to cause harm." }
         ]
       };
       break;
     case 'Kryn Kent':
       fighter.description = {
-        background: "A professional wrestler from Russia who trained in the Siberian wilderness, wrestling bears to increase his strength. He fights to prove the superiority of Russian wrestling.",
-        personality: "Passionate, patriotic, and surprisingly gentle outside of combat. Zangief fights for the pride of his country.",
+        background: "Born with an artist's eye and a dancer's grace in Manila, Kryn Kent merged her video editing precision with dance choreography to create a visually stunning combat style that's as beautiful as it is deadly.",
+        personality: "Creative, detail-oriented, and expressive. Kryn approaches fights like a performance, with each movement flowing into the next in a carefully edited sequence.",
         specialMoves: [
-          { name: "Spinning Piledriver", description: "A devastating grab that spins opponents into the ground." },
-          { name: "Double Lariat", description: "Zangief spins with arms extended, hitting opponents multiple times and deflecting projectiles." },
-          { name: "Banishing Flat", description: "A charging punch that can be used to close distance and counter attacks." }
+          { name: "Frame Perfect", description: "Executes attacks with such precise timing that they're nearly impossible to counter." },
+          { name: "Choreographed Combo", description: "A dance-inspired sequence of attacks that becomes more powerful with each successful hit." },
+          { name: "Final Cut", description: "Analyzes previous exchanges to create a perfect counter-strategy, like editing together the perfect response." }
         ]
       };
       break;
     case 'LyndonJT':
       fighter.description = {
-        background: "The master of the dark 'Satsui no Hado' fighting style and brother to Ryu and Ken's master Gouken. Akuma embraces the killing power that Ryu rejects.",
-        personality: "Cold, ruthless, and obsessed with power. Akuma seeks only worthy opponents to test his deadly abilities.",
+        background: "Manila's premier martial artist, LyndonJT combines traditional boxing with modern strength training to create a balanced fighting style. Standing at 6'1\", his reach advantage and physical conditioning make him a formidable opponent for anyone.",
+        personality: "Disciplined, honorable, and protective. LyndonJT fights with a strict moral code and uses his strength to defend rather than dominate.",
         specialMoves: [
-          { name: "Gohadoken", description: "A more powerful version of the Hadoken that can be fired in midair." },
-          { name: "Goshoryuken", description: "A dragon punch with multiple hits and enhanced damage." },
-          { name: "Raging Demon", description: "His ultimate technique that attacks an opponent's soul, dealing damage based on their past sins." }
-        ]
-      };
-      break;
-    case 'Dherrian':
-      fighter.description = {
-        background: "The leader of the criminal organization Shadaloo and master of Psycho Power. Bison's original body was destroyed, but his consciousness can transfer to new bodies.",
-        personality: "Megalomaniacal, power-hungry, and utterly ruthless. Bison cares only for domination and the expansion of his power.",
-        specialMoves: [
-          { name: "Psycho Crusher", description: "Bison charges forward surrounded by Psycho Power, hitting multiple times." },
-          { name: "Double Knee Press", description: "A sliding kick that can hit opponents from a distance, also known as 'Scissor Kick'." },
-          { name: "Head Stomp", description: "Bison leaps into the air and stomps down on the opponent's head." }
+          { name: "Perfect Form", description: "A devastatingly powerful punch executed with flawless technique for maximum impact." },
+          { name: "Endurance Rush", description: "Increases attack speed and power as the fight progresses, making him more dangerous over time." },
+          { name: "Guardian Counter", description: "A defensive technique that absorbs an opponent's attack and returns the energy two-fold." }
         ]
       };
       break;
     case 'Vann Damme':
       fighter.description = {
-        background: "Originally named Jimmy, Blanka was a plane crash survivor in the Amazon rainforest who developed beastly characteristics while living in the wild.",
-        personality: "Wild but gentle-hearted. Despite his fearsome appearance, Blanka is kindhearted and protective of his friends and mother.",
+        background: "A Shotokan Karate master from Cebu, Vann Damme has dedicated his life to martial arts. His training under various masters across Asia has given him a comprehensive understanding of combat philosophy and technique.",
+        personality: "Contemplative, balanced, and resilient. Vann approaches combat as a form of communication rather than domination, seeking to understand opponents through exchange of techniques.",
         specialMoves: [
-          { name: "Electric Thunder", description: "Blanka charges his body with electricity, shocking anyone who makes contact." },
-          { name: "Rolling Attack", description: "Curls into a ball and rolls forward at high speed to strike opponents." },
-          { name: "Amazon River Run", description: "A low sliding attack that can trip opponents and evade certain attacks." }
+          { name: "Shotokan Spirit", description: "Channels the essence of karate fundamentals for a perfect balance of speed, power, and technique." },
+          { name: "Meditation Counter", description: "Enters a brief meditative state that allows for perfect reaction timing to incoming attacks." },
+          { name: "Dragon's Path", description: "A series of precisely calculated strikes that target pressure points and vital areas." }
         ]
       };
       break;
     case 'Super Dan':
       fighter.description = {
-        background: "The leader of the criminal organization Shadaloo and master of Psycho Power. Bison's original body was destroyed, but his consciousness can transfer to new bodies.",
-        personality: "Megalomaniacal, power-hungry, and utterly ruthless. Bison cares only for domination and the expansion of his power.",
+        background: "Known throughout Cebu for his extreme emotional range, Super Dan has harnessed the power of happiness and sadness into a unique fighting style that's unpredictable and psychologically intimidating.",
+        personality: "Emotionally volatile but strategically sound. Dan's apparent mood swings are often calculated to confuse opponents and create openings.",
         specialMoves: [
-          { name: "Psycho Crusher", description: "Bison charges forward surrounded by Psycho Power, hitting multiple times." },
-          { name: "Double Knee Press", description: "A sliding kick that can hit opponents from a distance, also known as 'Scissor Kick'." },
-          { name: "Head Stomp", description: "Bison leaps into the air and stomps down on the opponent's head." }
+          { name: "Mood Swing", description: "Rapidly shifts between aggressive and defensive stances, making patterns difficult to predict." },
+          { name: "Euphoric Rush", description: "Channels pure happiness into a burst of speed and power that overwhelms defenses." },
+          { name: "Melancholy Barrier", description: "Creates a protective aura of sadness that absorbs incoming damage and converts it to strength." }
         ]
       };
       break;
     case 'Dherrian':
       fighter.description = {
-        background: "The leader of the criminal organization Shadaloo and master of Psycho Power. Bison's original body was destroyed, but his consciousness can transfer to new bodies.",
-        personality: "Megalomaniacal, power-hungry, and utterly ruthless. Bison cares only for domination and the expansion of his power.",
+        background: "Raised in the fishing communities of Manila, Dherrian developed remarkable patience and precision from fishing, combined with the raw strength required for hunting. These seemingly simple skills translate into a surprisingly effective combat approach.",
+        personality: "Patient, observant, and decisive. Like a skilled fisher, Dherrian waits for the perfect moment to strike, but shows the hunter's instinct when pursuing advantage.",
         specialMoves: [
-          { name: "Psycho Crusher", description: "Bison charges forward surrounded by Psycho Power, hitting multiple times." },
-          { name: "Double Knee Press", description: "A sliding kick that can hit opponents from a distance, also known as 'Scissor Kick'." },
-          { name: "Head Stomp", description: "Bison leaps into the air and stomps down on the opponent's head." }
+          { name: "Perfect Cast", description: "A precisely targeted attack that can snare opponents from unexpected angles." },
+          { name: "Hunter's Mark", description: "Identifies an opponent's weakness and enhances damage against that vulnerability." },
+          { name: "Fisherman's Endurance", description: "Channels the patience of fishing into enhanced stamina and recovery abilities." }
         ]
       };
       break;
     case 'Kizzia':
       fighter.description = {
-        background: "The leader of the criminal organization Shadaloo and master of Psycho Power. Bison's original body was destroyed, but his consciousness can transfer to new bodies.",
-        personality: "Megalomaniacal, power-hungry, and utterly ruthless. Bison cares only for domination and the expansion of his power.",
+        background: "A Manila prodigy with diverse talents, Kizzia combines artistic precision from drawing, rhythmic timing from musical instruments, and strategic thinking from Valorant into a unique and unpredictable fighting style.",
+        personality: "Creative, adaptable, and strategically minded. Kizzia approaches combat like a complex art form, with each technique flowing into the next.",
         specialMoves: [
-          { name: "Psycho Crusher", description: "Bison charges forward surrounded by Psycho Power, hitting multiple times." },
-          { name: "Double Knee Press", description: "A sliding kick that can hit opponents from a distance, also known as 'Scissor Kick'." },
-          { name: "Head Stomp", description: "Bison leaps into the air and stomps down on the opponent's head." }
+          { name: "Artistic Vision", description: "Predicts and counters opponent movements by visualizing attack patterns like drawings." },
+          { name: "Rhythmic Combo", description: "A series of attacks performed with perfect musical timing that's difficult to interrupt." },
+          { name: "Tactical Reload", description: "Quickly adapts strategy mid-fight based on opponent patterns, like changing tactics in Valorant." }
         ]
       };
       break;
     case 'Sjjayee':
       fighter.description = {
-        background: "The leader of the criminal organization Shadaloo and master of Psycho Power. Bison's original body was destroyed, but his consciousness can transfer to new bodies.",
-        personality: "Megalomaniacal, power-hungry, and utterly ruthless. Bison cares only for domination and the expansion of his power.",
+        background: "A gaming prodigy from Manila, Sjjayee has translated thousands of hours of competitive gaming into real-world combat reflexes and strategic thinking. His understanding of patterns, timing, and resource management gives him a unique edge.",
+        personality: "Focused, analytical, and quick-thinking. Sjjayee approaches fights like a game, constantly calculating optimal moves and counter-strategies.",
         specialMoves: [
-          { name: "Psycho Crusher", description: "Bison charges forward surrounded by Psycho Power, hitting multiple times." },
-          { name: "Double Knee Press", description: "A sliding kick that can hit opponents from a distance, also known as 'Scissor Kick'." },
-          { name: "Head Stomp", description: "Bison leaps into the air and stomps down on the opponent's head." }
+          { name: "Frame Perfect", description: "Executes attacks with the precise timing of a pro gamer, exploiting small windows of opportunity." },
+          { name: "Resource Management", description: "Carefully conserves energy throughout a fight for maximum efficiency and endurance." },
+          { name: "Meta Counter", description: "Quickly identifies and adapts to opponent patterns, like countering the current 'meta' in competitive games." }
         ]
       };
       break;
-
   }
 });
 
@@ -369,6 +369,12 @@ function initFighters() {
   // Hide the loading screen
   setTimeout(() => {
     loader.style.display = 'none';
+    
+    // Play background music
+    playBackgroundMusic();
+    
+    // Setup music controls
+    setupMusicControls();
     
     // Display the fighters
     listFighters();
@@ -379,6 +385,53 @@ function initFighters() {
     // Start animations
     animateElements();
   }, 1000); // Simulate a loading delay for better user experience
+}
+
+// Function to play background music
+function playBackgroundMusic() {
+  bgMusic.volume = 0.4; // Set initial volume
+  
+  // Many browsers require user interaction before playing audio
+  // We'll try to play and handle any errors
+  const playPromise = bgMusic.play();
+  
+  if (playPromise !== undefined) {
+    playPromise.catch(error => {
+      // Auto-play was prevented
+      console.log("Audio playback was prevented. Waiting for user interaction.");
+      
+      // Add a click listener to the document to play music on first interaction
+      const playMusicOnInteraction = () => {
+        bgMusic.play().catch(e => console.log("Could not play audio: ", e));
+        document.removeEventListener('click', playMusicOnInteraction);
+      };
+      
+      document.addEventListener('click', playMusicOnInteraction);
+    });
+  }
+}
+
+// Music control functionality
+function setupMusicControls() {
+  const musicControl = document.getElementById('musicControl');
+  
+  // Initial state based on whether music is playing
+  if (bgMusic.paused) {
+    musicControl.classList.add('muted');
+  } else {
+    musicControl.classList.remove('muted');
+  }
+  
+  // Toggle mute/unmute when clicked
+  musicControl.addEventListener('click', function() {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicControl.classList.remove('muted');
+    } else {
+      bgMusic.pause();
+      musicControl.classList.add('muted');
+    }
+  });
 }
 
 function listFighters() {
@@ -424,7 +477,7 @@ function listFighters() {
 // Play a selection sound when a fighter is clicked
 function playSelectionSound() {
   const selectSound = new Audio('sound/video-game-select.wav');
-  selectSound.volume = 0.5;
+  selectSound.volume = 1.0;
   selectSound.play();
 }
 
