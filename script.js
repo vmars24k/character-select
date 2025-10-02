@@ -411,25 +411,26 @@ function playBackgroundMusic() {
   }
 }
 
-// Music control functionality
+// Music control functionality with Font Awesome
 function setupMusicControls() {
   const musicControl = document.getElementById('musicControl');
+  const icon = musicControl.querySelector('i');
   
   // Initial state based on whether music is playing
   if (bgMusic.paused) {
-    musicControl.classList.add('muted');
+    icon.className = 'fa-solid fa-volume-xmark'; // Muted icon
   } else {
-    musicControl.classList.remove('muted');
+    icon.className = 'fa-solid fa-volume-high'; // Unmuted icon
   }
   
   // Toggle mute/unmute when clicked
   musicControl.addEventListener('click', function() {
     if (bgMusic.paused) {
       bgMusic.play();
-      musicControl.classList.remove('muted');
+      icon.className = 'fa-solid fa-volume-high'; // Change to unmuted icon
     } else {
       bgMusic.pause();
-      musicControl.classList.add('muted');
+      icon.className = 'fa-solid fa-volume-xmark'; // Change to muted icon
     }
   });
 }
