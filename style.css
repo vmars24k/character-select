@@ -107,7 +107,7 @@ img {
   left: 20px;
   width: 40px;
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgb(0, 0, 0);
   border: 2px solid yellow;
   border-radius: 50%;
   display: flex;
@@ -360,20 +360,40 @@ img {
   height: auto;
   object-fit: contain; /* Ensure the image maintains aspect ratio */
   object-position: center; /* Center the image content */
-
 }
 
 .location-marker {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  background-color: #f52808;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   border: 2px solid #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  animation: pulse 1.5s infinite;
   z-index: 2;
+  transition: all 0.3s ease;
+}
+
+/* Active marker (current fighter) */
+.active-marker {
+  width: 16px;
+  height: 16px;
+  background-color: #f52808; /* Red color */
+  animation: pulse 1.5s infinite;
+  z-index: 3; /* Above inactive markers */
+}
+
+/* Inactive markers (other fighters) */
+.inactive-marker {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(128, 128, 128, 1); /* Yellow color */
+  border: 1px solid #fff;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+.inactive-marker:hover {
+  transform: translate(-50%, -50%) scale(1.3);
+  opacity: 1;
 }
 
 /* Custom scrollbar for other elements */
@@ -418,8 +438,8 @@ img {
 .info-btn::before {
   content: "";
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000000'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
@@ -433,8 +453,18 @@ img {
   }
   
   .info-btn::before {
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .active-marker {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .inactive-marker {
+    width: 8px;
+    height: 8px;
   }
 }
 
@@ -624,11 +654,6 @@ img {
     margin-bottom: 10px;
   }
   
-  .location-marker {
-    width: 12px;
-    height: 12px;
-  }
-  
   .modal-content {
     width: 90%;
     padding: 20px;
@@ -672,9 +697,14 @@ img {
     font-size: 0.45em;
   }
   
-  .location-marker {
+  .active-marker {
     width: 10px;
     height: 10px;
+  }
+  
+  .inactive-marker {
+    width: 6px;
+    height: 6px;
   }
 }
 
