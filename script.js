@@ -571,13 +571,23 @@ function createWorldMap(fighter) {
     `;
   }
   
+  // Create markers for all fighters
+  let allMarkers = '';
+  fighters.forEach(f => {
+    if (f.location) {
+      // Determine marker class based on whether this is the active fighter
+      const markerClass = (f.id === fighter.id) ? 'location-marker active-marker' : 'location-marker inactive-marker';
+      allMarkers += `<div class="${markerClass}" style="left: ${f.location.x}%; top: ${f.location.y}%;" title="${f.name}"></div>`;
+    }
+  });
+  
   return `
     <div class="stat">
       <span class="tag">Birthplace</span> ${fighter.birth}
     </div>
     <div class="world-map-container">
       <img src="image/mapofph.png" class="world-map" alt="World Map">
-      <div class="location-marker" style="left: ${fighter.location.x}%; top: ${fighter.location.y}%;"></div>
+      ${allMarkers}
     </div>
   `;
 }
