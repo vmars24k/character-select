@@ -18,7 +18,7 @@ const fighters = [
     alignment: 'Lawful Good',
     alignmentType: 'good',
     active: true,
-    location: { x: 64.8, y: 59.4 } // Cebu
+    location: { x: 65, y: 64 } // Cebu - central Philippines
   },
   {
     id: 'Justine Tate',
@@ -32,7 +32,7 @@ const fighters = [
     alignment: 'Lawful Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 60.5, y: 42.3 } // Manila
+    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
   },
   {
     id: 'King Kaikon',
@@ -46,7 +46,7 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 70.2, y: 75.6 } // Davao
+    location: { x: 77, y: 85 } // Davao - southern Philippines (Mindanao)
   },
   {
     id: 'Emman DeGuzman',
@@ -60,7 +60,7 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 64.8, y: 59.4 } // Cebu
+    location: { x: 65, y: 64 } // Cebu - central Philippines
   },
   {
     id: 'Cedrick Garces',
@@ -74,7 +74,7 @@ const fighters = [
     alignment: 'Good/Lawful Neutral',
     alignmentType: 'good',
     active: false,
-    location: { x: 70.2, y: 75.6 } // Davao
+    location: { x: 77, y: 85 } // Davao - southern Philippines (Mindanao)
   },
   {
     id: 'PlayBoy Daim',
@@ -88,7 +88,7 @@ const fighters = [
     alignment: 'Evil/Lawful Neutral',
     alignmentType: 'evil',
     active: false,
-    location: { x: 64.8, y: 59.4 } // Cebu
+    location: { x: 65, y: 64 } // Cebu - central Philippines
   },
   {
     id: 'Beatrix',
@@ -102,7 +102,7 @@ const fighters = [
     alignment: 'Neutral',
     alignmentType: 'neutral',
     active: false,
-    location: { x: 60.5, y: 42.3 } // Manila
+    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
   },
   {
     id: 'Kryn Kent',
@@ -116,7 +116,7 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 60.5, y: 42.3 } // Manila
+    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
   },
   {
     id: 'LyndonJT',
@@ -130,7 +130,7 @@ const fighters = [
     alignment: 'Lawful Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 60.5, y: 42.3 } // Manila
+    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
   },
   {
     id: 'Vann Damme',
@@ -144,9 +144,8 @@ const fighters = [
     alignment: 'Neutral',
     alignmentType: 'neutral',
     active: false,
-    location: { x: 64.8, y: 59.4 } // Cebu
+    location: { x: 65, y: 64 } // Cebu - central Philippines
   },
-
   {
     id: 'Super Dan',
     name: 'Super Dan',
@@ -159,7 +158,7 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 64.8, y: 59.4 } // Cebu
+    location: { x: 65, y: 64 } // Cebu - central Philippines
   },
   {
     id: 'Dherrian',
@@ -173,7 +172,7 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 60.5, y: 42.3 } // Manila
+    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
   },
   {
     id: 'Kizzia',
@@ -187,9 +186,9 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 60.5, y: 42.3 } // Manila
+    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
   },
-    {
+  {
     id: 'Sjjayee',
     name: 'Sjjayee',
     smallImg: 'image/player14.jpg',
@@ -201,7 +200,7 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 60.5, y: 42.3 } // Manila
+    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
   },
 ];
 
