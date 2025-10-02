@@ -100,7 +100,7 @@ img {
   align-items: center;
 }
 
-/* Music Controls */
+/* Music Controls with Font Awesome */
 .music-control {
   position: fixed;
   top: 20px;
@@ -116,23 +116,13 @@ img {
   cursor: pointer;
   z-index: 100;
   transition: all 0.3s ease;
+  color: yellow;
+  font-size: 18px;
 }
 
 .music-control:hover {
   transform: scale(1.1);
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-.music-control.muted::before {
-  content: "🔇";
-  color: yellow;
-  font-size: 20px;
-}
-
-.music-control:not(.muted)::before {
-  content: "🔊";
-  color: yellow;
-  font-size: 20px;
 }
 
 @media (max-width: 768px) {
@@ -141,9 +131,6 @@ img {
     height: 35px;
     top: 15px;
     left: 15px;
-  }
-  
-  .music-control::before {
     font-size: 16px;
   }
 }
