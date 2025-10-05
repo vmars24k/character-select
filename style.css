@@ -302,6 +302,8 @@ img {
   text-shadow: 0 0 3px yellow;
   text-transform: uppercase;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .fighter-stats .stat {
@@ -338,6 +340,15 @@ img {
 
 .alignment.evil {
   color: #f52808;
+}
+
+/* Fighter Name Logo Styles */
+.fighter-name-logo {
+  max-width: 500px;
+  height: 240px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 /* World Map Styles */
@@ -421,11 +432,11 @@ img {
   color: black;
   font-size: 16px;
   cursor: pointer;
-  margin-left: 15px;
   transition: transform 0.2s, background-color 0.2s;
   vertical-align: middle;
   position: relative;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  margin-left: 10px;
 }
 
 .info-btn:hover {
@@ -667,6 +678,11 @@ img {
   .modal-header h2 {
     font-size: 1.5rem;
   }
+  
+  .fighter-name-logo {
+    max-width: 500px;
+    height: 240px;
+  }
 }
 
 /* Extra small devices */
@@ -678,10 +694,6 @@ img {
   
   .fighter-profile img {
     max-height: 250px;
-  }
-  
-  .fighter-stats .name {
-    font-size: 28px;
   }
   
   .fighter-stats .stat {
@@ -705,6 +717,11 @@ img {
   .inactive-marker {
     width: 6px;
     height: 6px;
+  }
+  
+  .fighter-name-logo {
+    max-width: 350px;
+    height: 240px;
   }
 }
 
