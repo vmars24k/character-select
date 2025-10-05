@@ -8,7 +8,8 @@ const bgMusic = document.getElementById('bgMusic');
 const fighters = [
   {
     id: 'Bruno Mars',
-    name: 'Bruno Mars',
+    header: 'Bruno Mars',
+    nameImg: 'image/logo-player1.png',
     smallImg: 'image/player1.jpg',
     largeImg: 'image/bm-player1.png',
     height: '5"9',
@@ -22,7 +23,8 @@ const fighters = [
   },
   {
     id: 'Justine Tate',
-    name: 'Justine Tate',
+    header: 'Justine Tate',
+    nameImg: 'image/logo-player2.png',
     smallImg: 'image/player2.jpg',
     largeImg: 'image/jt-player2.png',
     height: 'N/A',
@@ -36,7 +38,8 @@ const fighters = [
   },
   {
     id: 'King Kaikon',
-    name: 'King Kaikon',
+    header: 'King Kaikon',
+    nameImg: 'image/logo-player3.png',
     smallImg: 'image/player3.jpg',
     largeImg: 'image/kk-player3.png',
     height: 'N/A',
@@ -50,7 +53,8 @@ const fighters = [
   },
   {
     id: 'Emman DeGuzman',
-    name: 'Emman DeGuzman',
+    header: 'Emman DeGuzman',
+    nameImg: 'image/logo-player4.png',
     smallImg: 'image/player4.jpg',
     largeImg: 'image/eg-player4.png',
     height: 'N/A',
@@ -64,7 +68,8 @@ const fighters = [
   },
   {
     id: 'Cedrick Garces',
-    name: 'Cedrick Garces',
+    header: 'Cedrick Garces',
+    nameImg: 'image/logo-player5.png',
     smallImg: 'image/player5.jpg',
     largeImg: 'image/cg-player5.png',
     height: '5"10',
@@ -78,7 +83,8 @@ const fighters = [
   },
   {
     id: 'PlayBoy Daim',
-    name: 'PlayBoy Daim',
+    header: 'PlayBoy Daim',
+    nameImg: 'image/logo-player6.png',
     smallImg: 'image/player6.jpg',
     largeImg: 'image/ds-player6.png',
     height: 'N/A',
@@ -92,7 +98,8 @@ const fighters = [
   },
   {
     id: 'Beatrix',
-    name: 'Beatrix',
+    header: 'Beatrix',
+    nameImg: 'image/logo-player7.png',
     smallImg: 'image/player7.jpg',
     largeImg: 'image/bs-player7.png',
     height: 'N/A',
@@ -106,7 +113,8 @@ const fighters = [
   },
   {
     id: 'Kryn Kent',
-    name: 'Kryn Kent',
+    header: 'Kryn Kent',
+    nameImg: 'image/logo-player8.png',
     smallImg: 'image/player8.jpg',
     largeImg: 'image/kr-player8.png',
     height: 'N/A',
@@ -120,7 +128,8 @@ const fighters = [
   },
   {
     id: 'LyndonJT',
-    name: 'LyndonJT',
+    header: 'LyndonJT',
+    nameImg: 'image/logo-player9.png',
     smallImg: 'image/player9.jpg',
     largeImg: 'image/ljt-player9.png',
     height: '6"1',
@@ -134,7 +143,8 @@ const fighters = [
   },
   {
     id: 'Vann Damme',
-    name: 'Vann Damme',
+    header: 'Vann Damme',
+    nameImg: 'image/logo-player10.png',
     smallImg: 'image/player10.png',
     largeImg: 'image/vd-player10.png',
     height: '5"9',
@@ -148,7 +158,8 @@ const fighters = [
   },
   {
     id: 'Super Dan',
-    name: 'Super Dan',
+    header: 'Super Dan',
+    nameImg: 'image/logo-player11.png',
     smallImg: 'image/player11.jpg',
     largeImg: 'image/ds-player11.png',
     height: 'N/A',
@@ -162,7 +173,8 @@ const fighters = [
   },
   {
     id: 'Dherrian',
-    name: 'Dherrian',
+    header: 'Dherrian',
+    nameImg: 'image/logo-player12.png',
     smallImg: 'image/player12.jpg',
     largeImg: 'image/dd-player12.png',
     height: 'N/A',
@@ -176,7 +188,8 @@ const fighters = [
   },
   {
     id: 'Kizzia',
-    name: 'Kizzia',
+    header: 'Kizzia',
+    nameImg: 'image/logo-player13.png',
     smallImg: 'image/player13.jpg',
     largeImg: 'image/kd-player13.png',
     height: 'N/A',
@@ -190,7 +203,8 @@ const fighters = [
   },
   {
     id: 'Sjjayee',
-    name: 'Sjjayee',
+    header: 'Sjjayee',
+    nameImg: 'image/logo-player14.png',
     smallImg: 'image/player14.jpg',
     largeImg: 'image/sb-player14.png',
     height: '5"9',
@@ -437,8 +451,8 @@ function setupMusicControls() {
 function listFighters() {
   fighters.forEach(function (fighter, index) {
     const fighterItem = `
-      <img src="${fighter.smallImg}" alt="${fighter.name}"/>
-      <span class="fighter-name">${fighter.name}</span>
+      <img src="${fighter.smallImg}" alt="${fighter.header}"/>
+      <span class="fighter-header">${fighter.header}</span>
     `;
 
     const item = document.createElement('li');
@@ -511,8 +525,8 @@ function createDescriptionModal(fighter) {
       <span class="close-btn">&times;</span>
       
       <div class="modal-header">
-        <img src="${fighter.smallImg}" alt="${fighter.name}">
-        <h2>${fighter.name}</h2>
+        <img src="${fighter.smallImg}" alt="${fighter.header}">
+        <h2>${fighter.header}</h2>
       </div>
       
       <div class="modal-body">
@@ -595,16 +609,16 @@ function createWorldMap(fighter) {
 function viewFighterDetail(fighter) {
   const fighterElement = document.getElementById('fighter');
   
-  // Create fighter details HTML
+  // Create fighter details HTML with logo image instead of text name
   let result = `
     <div class="fighter-details">
       <div class="fighter-profile">
-        <img src="${fighter.largeImg}" alt="${fighter.name}"/>
+        <img src="${fighter.largeImg}" alt="${fighter.header}"/>
       </div>
       <div class="fighter-stats">
         <div class="name">
-          ${fighter.name}
-          <span class="info-btn" title="View ${fighter.name}'s details"></span>
+          <img src="${fighter.nameImg}" class="fighter-name-logo" />
+          <span class="info-btn" title="View ${fighter.header}'s details"></span>
         </div>
         <div class="stat">
           <span class="tag">Height</span> ${fighter.height}
