@@ -402,7 +402,7 @@ function initFighters() {
 
 // Function to play background music
 function playBackgroundMusic() {
-  bgMusic.volume = 0.4; // Set initial volume
+  bgMusic.volume = 0.2; // Set initial volume
   
   // Many browsers require user interaction before playing audio
   // We'll try to play and handle any errors
