@@ -245,8 +245,8 @@ img {
 /* Mobile phones */
 @media (max-width: 480px) {
   #fighters li {
-    width: 75px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     outline-width: 1.5px;
   }
 }
