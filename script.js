@@ -8,7 +8,7 @@ const bgMusic = document.getElementById('bgMusic');
 const fighters = [
   {
     id: 'Bruno Mars',
-    name: 'Bruno Mars',
+    name: 'Bruno',
     header: 'Bruno Mars',
     nameImg: 'image/logo-player1.png',
     smallImg: 'image/player1.jpg',
@@ -24,7 +24,7 @@ const fighters = [
   },
   {
     id: 'Justine Tate',
-    name: 'Justine Tate',
+    name: 'Justine',
     header: 'Justine Tate',
     nameImg: 'image/logo-player2.png',
     smallImg: 'image/player2.jpg',
@@ -40,7 +40,7 @@ const fighters = [
   },
   {
     id: 'King Kaikon',
-    name: 'King Kaikon',
+    name: 'Kaikon',
     header: 'King Kaikon',
     nameImg: 'image/logo-player3.png',
     smallImg: 'image/player3.jpg',
@@ -56,7 +56,7 @@ const fighters = [
   },
   {
     id: 'Emman DeGuzman',
-    name: 'Emman DeGuzman',
+    name: 'Emman',
     header: 'Emman DeGuzman',
     nameImg: 'image/logo-player4.png',
     smallImg: 'image/player4.jpg',
@@ -72,7 +72,7 @@ const fighters = [
   },
   {
     id: 'Cedrick Garces',
-    name: 'Cedrick Garces',
+    name: 'Cedrick',
     header: 'Cedrick Garces',
     nameImg: 'image/logo-player5.png',
     smallImg: 'image/player5.jpg',
@@ -87,9 +87,9 @@ const fighters = [
     location: { x: 77, y: 84 } // Davao - southern Philippines (Mindanao)
   },
   {
-    id: 'PlayBoy Daim',
-    name: 'PlayBoy Daim',
-    header: 'PlayBoy Daim',
+    id: 'Daim Samaco',
+    name: 'Daim',
+    header: 'Daim Samaco',
     nameImg: 'image/logo-player6.png',
     smallImg: 'image/player6.jpg',
     largeImg: 'image/ds-player6.png',
@@ -120,7 +120,7 @@ const fighters = [
   },
   {
     id: 'Kryn Kent',
-    name: 'Kryn Kent',
+    name: 'Kent',
     header: 'Kryn Kent',
     nameImg: 'image/logo-player8.png',
     smallImg: 'image/player8.jpg',
@@ -136,7 +136,7 @@ const fighters = [
   },
   {
     id: 'LyndonJT',
-    name: 'LyndonJT',
+    name: 'Lyndon',
     header: 'LyndonJT',
     nameImg: 'image/logo-player9.png',
     smallImg: 'image/player9.jpg',
@@ -152,7 +152,7 @@ const fighters = [
   },
   {
     id: 'Vann Damme',
-    name: 'Vann Damme',
+    name: 'Vann',
     header: 'Vann Damme',
     nameImg: 'image/logo-player10.png',
     smallImg: 'image/player10.png',
@@ -168,7 +168,7 @@ const fighters = [
   },
   {
     id: 'Super Dan',
-    name: 'Super Dan',
+    name: 'Dan',
     header: 'Super Dan',
     nameImg: 'image/logo-player11.png',
     smallImg: 'image/player11.jpg',
@@ -216,7 +216,7 @@ const fighters = [
   },
   {
     id: 'Sjjayee',
-    name: 'Sjjayee',
+    name: 'Sid',
     header: 'Sjjayee',
     nameImg: 'image/logo-player14.png',
     smallImg: 'image/player14.jpg',
@@ -465,8 +465,8 @@ function setupMusicControls() {
 function listFighters() {
   fighters.forEach(function (fighter, index) {
     const fighterItem = `
-      <img src="${fighter.smallImg}" alt="${fighter.header}"/>
-      <span class="fighter-name">${fighter.header}</span>
+      <img src="${fighter.smallImg}" alt="${fighter.name}"/>
+      <span class="fighter-name">${fighter.name}</span>
     `;
 
     const item = document.createElement('li');
