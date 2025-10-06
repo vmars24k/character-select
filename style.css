@@ -338,6 +338,45 @@ img {
   display: none;
 }
 
+/* Tablet devices */
+@media (max-width: 768px) {
+  .fighter-name {
+    font-size: 0.5em;
+    padding: 0.04em 0;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .fighter-name {
+    font-size: 0.45em;
+    padding: 0.03em 0;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 375px) {
+  .fighter-name {
+    font-size: 0.4em;
+    padding: 0.02em 0;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+  .fighter-name {
+    font-size: 0.35em;
+  }
+}
+
+/* For landscape orientation on small screens */
+@media (max-height: 500px) and (orientation: landscape) {
+  .fighter-name {
+    font-size: 0.4em;
+    padding: 0.02em 0;
+  }
+}
+
 #fighters li.active .fighter-name {
   display: block;
 }
@@ -796,10 +835,6 @@ img {
   #fighters li {
     width: 50px;
     height: 55px;
-  }
-  
-  .fighter-name {
-    font-size: 0.45em;
   }
   
   .active-marker {
