@@ -8,6 +8,7 @@ const bgMusic = document.getElementById('bgMusic');
 const fighters = [
   {
     id: 'Bruno Mars',
+    name: 'Bruno Mars',
     header: 'Bruno Mars',
     nameImg: 'image/logo-player1.png',
     smallImg: 'image/player1.jpg',
@@ -23,21 +24,23 @@ const fighters = [
   },
   {
     id: 'Justine Tate',
+    name: 'Justine Tate',
     header: 'Justine Tate',
     nameImg: 'image/logo-player2.png',
     smallImg: 'image/player2.jpg',
     largeImg: 'image/jt-player2.png',
     height: 'N/A',
-    birth: 'Manila',
+    birth: 'Bantay',
     fighting: 'N/A',
     skills: 'Fishing and Welding',
     alignment: 'Lawful Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
+    location: { x: 41, y: 20 } // Bantay - Ilocos Sur, Philippines
   },
   {
     id: 'King Kaikon',
+    name: 'King Kaikon',
     header: 'King Kaikon',
     nameImg: 'image/logo-player3.png',
     smallImg: 'image/player3.jpg',
@@ -49,25 +52,27 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 77, y: 85 } // Davao - southern Philippines (Mindanao)
+    location: { x: 77, y: 84 } // Davao - southern Philippines (Mindanao)
   },
   {
     id: 'Emman DeGuzman',
+    name: 'Emman DeGuzman',
     header: 'Emman DeGuzman',
     nameImg: 'image/logo-player4.png',
     smallImg: 'image/player4.jpg',
     largeImg: 'image/eg-player4.png',
     height: 'N/A',
-    birth: 'Cebu',
+    birth: 'Tacloban',
     fighting: 'Boxing',
     skills: 'Comedian',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 65, y: 64 } // Cebu - central Philippines
+    location: { x: 73, y: 61 } // Tacloban - Leyte, Philippines
   },
   {
     id: 'Cedrick Garces',
+    name: 'Cedrick Garces',
     header: 'Cedrick Garces',
     nameImg: 'image/logo-player5.png',
     smallImg: 'image/player5.jpg',
@@ -79,40 +84,43 @@ const fighters = [
     alignment: 'Good/Lawful Neutral',
     alignmentType: 'good',
     active: false,
-    location: { x: 77, y: 85 } // Davao - southern Philippines (Mindanao)
+    location: { x: 77, y: 84 } // Davao - southern Philippines (Mindanao)
   },
   {
     id: 'PlayBoy Daim',
+    name: 'PlayBoy Daim',
     header: 'PlayBoy Daim',
     nameImg: 'image/logo-player6.png',
     smallImg: 'image/player6.jpg',
     largeImg: 'image/ds-player6.png',
     height: 'N/A',
-    birth: 'Cebu',
+    birth: 'Bohol',
     fighting: 'N/A',
     skills: 'Touching',
     alignment: 'Evil/Lawful Neutral',
     alignmentType: 'evil',
     active: false,
-    location: { x: 65, y: 64 } // Cebu - central Philippines
+    location: { x: 67, y: 68 } // Bohol - Philippines
   },
   {
     id: 'Beatrix',
+    name: 'Beatrix',
     header: 'Beatrix',
     nameImg: 'image/logo-player7.png',
     smallImg: 'image/player7.jpg',
     largeImg: 'image/bs-player7.png',
     height: 'N/A',
-    birth: 'Manila',
+    birth: 'Cagayan de Oro',
     fighting: 'N/A',
     skills: 'Love',
     alignment: 'Neutral',
     alignmentType: 'neutral',
     active: false,
-    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
+    location: { x: 70, y: 76 } // Cagayan de Oro - Misamis Oriental. Philippines
   },
   {
     id: 'Kryn Kent',
+    name: 'Kryn Kent',
     header: 'Kryn Kent',
     nameImg: 'image/logo-player8.png',
     smallImg: 'image/player8.jpg',
@@ -124,25 +132,27 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
+    location: { x: 44, y: 39 } // Manila - northern main island (Luzon)
   },
   {
     id: 'LyndonJT',
+    name: 'LyndonJT',
     header: 'LyndonJT',
     nameImg: 'image/logo-player9.png',
     smallImg: 'image/player9.jpg',
     largeImg: 'image/ljt-player9.png',
     height: '6"1',
-    birth: 'Manila',
+    birth: 'Davao',
     fighting: 'Boxing',
     skills: 'Martial Arts and Lifting',
     alignment: 'Lawful Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
+    location: { x: 77, y: 84 } // Davao - southern Philippines (Mindanao)
   },
   {
     id: 'Vann Damme',
+    name: 'Vann Damme',
     header: 'Vann Damme',
     nameImg: 'image/logo-player10.png',
     smallImg: 'image/player10.png',
@@ -158,51 +168,55 @@ const fighters = [
   },
   {
     id: 'Super Dan',
+    name: 'Super Dan',
     header: 'Super Dan',
     nameImg: 'image/logo-player11.png',
     smallImg: 'image/player11.jpg',
     largeImg: 'image/ds-player11.png',
     height: 'N/A',
-    birth: 'Cebu',
+    birth: 'Bohol',
     fighting: 'N/A',
     skills: 'Happy and Sad',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 65, y: 64 } // Cebu - central Philippines
+    location: { x: 67, y: 68 } // Bohol - Philippines
   },
   {
     id: 'Dherrian',
+    name: 'Dherrian',
     header: 'Dherrian',
     nameImg: 'image/logo-player12.png',
     smallImg: 'image/player12.jpg',
     largeImg: 'image/dd-player12.png',
     height: 'N/A',
-    birth: 'Manila',
+    birth: 'Bantay',
     fighting: 'N/A',
     skills: 'Fising and Hunting',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
+    location: { x: 41, y: 20 } // Bantay - Ilocos Sur, Philippines
   },
   {
     id: 'Kizzia',
+    name: 'Kizzia',
     header: 'Kizzia',
     nameImg: 'image/logo-player13.png',
     smallImg: 'image/player13.jpg',
     largeImg: 'image/kd-player13.png',
     height: 'N/A',
-    birth: 'Manila',
+    birth: 'Bantay',
     fighting: 'N/A',
     skills: 'Drawing, Playing Instruments, Valorant',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
+    location: { x: 41, y: 20 } // Bantay - Ilocos Sur, Philippines
   },
   {
     id: 'Sjjayee',
+    name: 'Sjjayee',
     header: 'Sjjayee',
     nameImg: 'image/logo-player14.png',
     smallImg: 'image/player14.jpg',
@@ -214,7 +228,7 @@ const fighters = [
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 44, y: 40 } // Manila - northern main island (Luzon)
+    location: { x: 44, y: 39 } // Manila - northern main island (Luzon)
   },
 ];
 
@@ -322,7 +336,7 @@ fighters.forEach(fighter => {
       break;
     case 'Vann Damme':
       fighter.description = {
-        background: "A Shotokan Karate master from Cebu, Vann Damme has dedicated his life to martial arts. His training under various masters across Asia has given him a comprehensive understanding of combat philosophy and technique.",
+        background: "A Shotokan Karate master from Cebu, Vann Damme has dedicated his life to martial arts. His training under various masters across Japan has given him a comprehensive understanding of combat philosophy and technique.",
         personality: "Contemplative, balanced, and resilient. Vann approaches combat as a form of communication rather than domination, seeking to understand opponents through exchange of techniques.",
         specialMoves: [
           { name: "Shotokan Spirit", description: "Channels the essence of karate fundamentals for a perfect balance of speed, power, and technique." },
@@ -452,7 +466,7 @@ function listFighters() {
   fighters.forEach(function (fighter, index) {
     const fighterItem = `
       <img src="${fighter.smallImg}" alt="${fighter.header}"/>
-      <span class="fighter-header">${fighter.header}</span>
+      <span class="fighter-name">${fighter.header}</span>
     `;
 
     const item = document.createElement('li');
