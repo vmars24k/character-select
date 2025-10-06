@@ -167,7 +167,7 @@ img {
   overflow-x: scroll;
   padding-left: 20px;
   padding-right: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -231,6 +231,51 @@ img {
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
+}
+
+/* Tablet devices */
+@media (max-width: 768px) {
+  #fighters li {
+    width: 65px;
+    height: 70px;
+    outline-width: 1.5px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  #fighters li {
+    width: 55px;
+    height: 60px;
+    outline-width: 1.5px;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 375px) {
+  #fighters li {
+    width: 50px;
+    height: 55px;
+    outline-width: 1px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 320px) {
+  #fighters li {
+    width: 45px;
+    height: 50px;
+    outline-width: 1px;
+  }
+}
+
+/* For landscape orientation on small screens */
+@media (max-height: 500px) and (orientation: landscape) {
+  #fighters li {
+    width: 50px;
+    height: 55px;
+    outline-width: 1px;
+  }
 }
 
 #fighters li.active {
