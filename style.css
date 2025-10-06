@@ -292,7 +292,8 @@ img {
   content: "1P";
   position: absolute;
   text-align: center;
-  top: -5px;
+  top: -3.5px;
+  left: 2.5px;
   font-size: 25px;
   color: #e3231e;
   font-weight: 700;
@@ -304,13 +305,15 @@ img {
   #fighters li.active::after {
     font-size: 20px;
     top: -5px;
+    left: 3px;
   }
 }
 
 @media (max-width: 480px) {
   #fighters li.active::after {
     font-size: 20px;
-    top: -5px;
+    top: -2.5px;
+    left: 2.5px;
   }
 }
 
