@@ -290,7 +290,7 @@ fighters.forEach(fighter => {
         ]
       };
       break;
-    case 'PlayBoy Daim':
+    case 'Daim Samaco':
       fighter.description = {
         background: "The notorious charmer from Cebu, Daim developed his unique 'touching' style that combines elements of pressure points, distraction techniques, and psychological manipulation. His reputation precedes him in both social and combat circles.",
         personality: "Flirtatious, unpredictable, and morally flexible. Daim uses charm as both a weapon and a shield, keeping opponents guessing about his true intentions.",
