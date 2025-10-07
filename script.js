@@ -248,7 +248,7 @@ fighters.forEach(fighter => {
       break;
     case 'Justine Tate':
       fighter.description = {
-        background: "Hailing from Manila, Justine Tate mastered the unlikely combination of fishing and welding. He turned these practical skills into a unique combat style, using fishing lines to ensnare opponents and precisely welded weapons for defense.",
+        background: "Hailing from Bantay, Justine Tate mastered the unlikely combination of fishing and welding. He turned these practical skills into a unique combat style, using fishing lines to ensnare opponents and precisely welded weapons for defense.",
         personality: "Patient and methodical, just like a seasoned fisher. Justine can wait for the perfect opportunity to strike, but acts with surgical precision when the moment comes.",
         specialMoves: [
           { name: "Master Angler", description: "Uses a specialized fishing line to pull opponents toward him or to swing across the battlefield." },
@@ -303,7 +303,7 @@ fighters.forEach(fighter => {
       break;
     case 'Beatrix':
       fighter.description = {
-        background: "Manila's mysterious love expert, Beatrix has studied the emotional and physical aspects of love to develop a fighting style based on connection and harmony. She can read opponents' emotional states and exploit them in battle.",
+        background: "Cagayan de Oro's mysterious love expert, Beatrix has studied the emotional and physical aspects of love to develop a fighting style based on connection and harmony. She can read opponents' emotional states and exploit them in battle.",
         personality: "Empathetic, balanced, and insightful. Beatrix maintains emotional neutrality in combat, allowing her to adapt to any situation without being clouded by passion.",
         specialMoves: [
           { name: "Emotional Resonance", description: "Senses and mirrors opponent's emotional state to predict their next moves." },
@@ -325,7 +325,7 @@ fighters.forEach(fighter => {
       break;
     case 'LyndonJT':
       fighter.description = {
-        background: "Manila's premier martial artist, LyndonJT combines traditional boxing with modern strength training to create a balanced fighting style. Standing at 6'1\", his reach advantage and physical conditioning make him a formidable opponent for anyone.",
+        background: "Davao's premier martial artist, LyndonJT combines traditional boxing with modern strength training to create a balanced fighting style. Standing at 6'1\", his reach advantage and physical conditioning make him a formidable opponent for anyone.",
         personality: "Disciplined, honorable, and protective. LyndonJT fights with a strict moral code and uses his strength to defend rather than dominate.",
         specialMoves: [
           { name: "Perfect Form", description: "A devastatingly powerful punch executed with flawless technique for maximum impact." },
@@ -358,7 +358,7 @@ fighters.forEach(fighter => {
       break;
     case 'Dherrian':
       fighter.description = {
-        background: "Raised in the fishing communities of Manila, Dherrian developed remarkable patience and precision from fishing, combined with the raw strength required for hunting. These seemingly simple skills translate into a surprisingly effective combat approach.",
+        background: "Raised in the fishing communities of Bantay, Dherrian developed remarkable patience and precision from fishing, combined with the raw strength required for hunting. These seemingly simple skills translate into a surprisingly effective combat approach.",
         personality: "Patient, observant, and decisive. Like a skilled fisher, Dherrian waits for the perfect moment to strike, but shows the hunter's instinct when pursuing advantage.",
         specialMoves: [
           { name: "Perfect Cast", description: "A precisely targeted attack that can snare opponents from unexpected angles." },
@@ -369,7 +369,7 @@ fighters.forEach(fighter => {
       break;
     case 'Kizzia':
       fighter.description = {
-        background: "A Manila prodigy with diverse talents, Kizzia combines artistic precision from drawing, rhythmic timing from musical instruments, and strategic thinking from Valorant into a unique and unpredictable fighting style.",
+        background: "A Bantay prodigy with diverse talents, Kizzia combines artistic precision from drawing, rhythmic timing from musical instruments, and strategic thinking from Valorant into a unique and unpredictable fighting style.",
         personality: "Creative, adaptable, and strategically minded. Kizzia approaches combat like a complex art form, with each technique flowing into the next.",
         specialMoves: [
           { name: "Artistic Vision", description: "Predicts and counters opponent movements by visualizing attack patterns like drawings." },
@@ -465,7 +465,7 @@ function setupMusicControls() {
 function listFighters() {
   fighters.forEach(function (fighter, index) {
     const fighterItem = `
-      <img src="${fighter.smallImg}" alt="${fighter.name}"/>
+      <img src="${fighter.smallImg}" alt="" />
       <span class="fighter-name">${fighter.name}</span>
     `;
 
@@ -614,7 +614,7 @@ function createWorldMap(fighter) {
       <span class="tag">Birthplace</span> ${fighter.birth}
     </div>
     <div class="world-map-container">
-      <img src="image/mapofph.png" class="world-map" alt="World Map">
+      <img src="image/mapofph.png" class="world-map" alt="Map of the Philippines">
       ${allMarkers}
     </div>
   `;
@@ -627,11 +627,11 @@ function viewFighterDetail(fighter) {
   let result = `
     <div class="fighter-details">
       <div class="fighter-profile">
-        <img src="${fighter.largeImg}" alt="${fighter.header}"/>
+        <img src="${fighter.largeImg}" alt="${fighter.header}" />
       </div>
       <div class="fighter-stats">
         <div class="name">
-          <img src="${fighter.nameImg}" class="fighter-name-logo" />
+          <img src="${fighter.nameImg}" class="fighter-name-logo" alt="${fighter.header} Logo" />
           <span class="info-btn" title="View ${fighter.header}'s details"></span>
         </div>
         <div class="stat">
