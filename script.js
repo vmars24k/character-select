@@ -184,7 +184,7 @@ const fighters = [
   },
   {
     id: 'Dherrian',
-    name: 'Dherrian',
+    name: 'Dherry',
     header: 'Dherrian',
     nameImg: 'image/logo-player12.png',
     smallImg: 'image/player12.jpg',
