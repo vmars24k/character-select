@@ -370,7 +370,7 @@ img {
 /* Mobile phones */
 @media (max-width: 480px) {
   .fighter-name {
-    font-size: 0.40em;
+    font-size: 0.25em;
     padding: 0.03em 0;
   }
 }
