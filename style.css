@@ -370,7 +370,7 @@ img {
 /* Mobile phones */
 @media (max-width: 480px) {
   .fighter-name {
-    font-size: 0.25em;
+    font-size: 0.45em;
     padding: 0.03em 0;
   }
 }
@@ -378,7 +378,7 @@ img {
 /* Small mobile phones */
 @media (max-width: 375px) {
   .fighter-name {
-    font-size: 0.25em;
+    font-size: 0.4em;
     padding: 0.02em 0;
   }
 }
@@ -393,7 +393,7 @@ img {
 /* For landscape orientation on small screens */
 @media (max-height: 500px) and (orientation: landscape) {
   .fighter-name {
-    font-size: 0.25em;
+    font-size: 0.4em;
     padding: 0.02em 0;
   }
 }
