@@ -20,7 +20,7 @@ const fighters = [
     alignment: 'Lawful Good',
     alignmentType: 'good',
     active: true,
-    location: { x: 65, y: 64 } // Cebu - central Philippines
+    location: { x: 66, y: 64 } // Cebu - central Philippines
   },
   {
     id: 'Justine Tate',
@@ -126,13 +126,13 @@ const fighters = [
     smallImg: 'image/player8.jpg',
     largeImg: 'image/kr-player8.png',
     height: 'N/A',
-    birth: 'Manila',
+    birth: 'Pardo',
     fighting: 'N/A',
     skills: 'Video Editing and Dancing',
     alignment: 'Good',
     alignmentType: 'good',
     active: false,
-    location: { x: 44, y: 39 } // Manila - northern main island (Luzon)
+    location: { x: 65, y: 64 } // Pardo - Cebu City, Philippines
   },
   {
     id: 'LyndonJT',
@@ -164,7 +164,7 @@ const fighters = [
     alignment: 'Neutral',
     alignmentType: 'neutral',
     active: false,
-    location: { x: 65, y: 64 } // Cebu - central Philippines
+    location: { x: 66, y: 64 } // Cebu - central Philippines
   },
   {
     id: 'Super Dan',
@@ -667,6 +667,12 @@ function animateElements() {
   const tl = gsap.timeline();
   tl.to("#fighters", { y: 0, duration: 0.6, opacity: 1 });
   tl.to("#fighter", { y: 0, duration: 0.6, opacity: 1, stagger: 0.2 });
+  
+  // Add animations for logo and music control at the same time
+  setTimeout(() => {
+    document.querySelector('.logo').classList.add('animate');
+    document.querySelector('.music-control').classList.add('animate');
+  }, 300); // Small delay after main elements have started animating
 }
 
 // Initialize the app
