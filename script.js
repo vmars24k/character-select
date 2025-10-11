@@ -20,7 +20,7 @@ const fighters = [
     alignment: 'Lawful Good',
     alignmentType: 'good',
     active: true,
-    location: { x: 66, y: 64 } // Cebu - central Philippines
+    location: { x: 65.5, y: 64 } // Cebu - central Philippines
   },
   {
     id: 'Justine Tate',
@@ -164,7 +164,7 @@ const fighters = [
     alignment: 'Neutral',
     alignmentType: 'neutral',
     active: false,
-    location: { x: 66, y: 64 } // Cebu - central Philippines
+    location: { x: 65.5, y: 64 } // Cebu - central Philippines
   },
   {
     id: 'Super Dan',
